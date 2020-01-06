@@ -1,0 +1,12 @@
+<html lang="en">
+
+<%- include ../partials/header %>
+<div class="jumbotron">
+    <h2>Welcome Home</h2>
+    <% if (typeof error !== 'undefined' && error.length > 0) { %>
+    <div class="alert alert-danger col-sm-12"><%= error %></div>
+    <% }else if (typeof success !== 'undefined' && success.length > 0) { %>
+    <div class="alert alert-success col-sm-12"><%= success %></div>
+    <% } %>
+</div>
+<%- include ../partials/footer %>

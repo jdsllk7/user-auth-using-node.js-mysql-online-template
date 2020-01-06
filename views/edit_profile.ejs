@@ -1,0 +1,96 @@
+<html lang="en">
+
+<%- include ../partials/header %>
+
+<div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">Edit Profile</div>
+
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" role="form" method="post" action="/edit_profile"
+                onSubmit="return checkblank(this);">
+                <% if (typeof error !== 'undefined' && error.length > 0) { %>
+                <ul class="alert alert-danger col-sm-12">
+                    <% error.forEach((err)=> { %><li style="margin-left: 3%;"><%= err %><br></li><% }) %>
+                </ul>
+                <% }else if (typeof success !== 'undefined' && success.length > 0) { %>
+                <div class="alert alert-success col-sm-12"><%= success %></div>
+                <% } %>
+
+                <div class="form-group">
+                    <label for="first_name" class="col-md-3 control-label">First Name</label>
+                    <div class="col-md-9">
+                        <input required type="text" value="<%if(typeof first_name!=='undefined'){%><%=first_name%><%}%>" class="form-control" name="first_name"
+                            placeholder="First Name">
+                        <small id="emailHelp" class="form-text text-muted" style="color:red;"><% if(typeof first_nameError !== 'undefined'){ %><%= first_nameError %> <% } %></small>
+                    </div>
+                </div>
+                <div class=" form-group">
+                        <label for="last_name" class="col-md-3 control-label">Last Name</label>
+                        <div class="col-md-9">
+                            <input required type="text" value="<%if(typeof last_name!=='undefined'){%><%=last_name%><%}%>" class="form-control" name="last_name"
+                            placeholder="Last Name">
+                        <small id="emailHelp" class="form-text text-muted" style="color:red;"><% if(typeof last_nameError !== 'undefined'){ %>
+                            <%= last_nameError %> <% } %></small>
+                    </div>
+                </div>
+                                <div class=" form-group">
+                            <label for="contact" class="col-md-3 control-label">Phone Number</label>
+                            <div class="col-md-9">
+                                <input required type="number" min="1" max="0979999999" value="<%if(typeof contact!=='undefined'){%><%=contact%><%}%>" class="form-control" name="contact"
+                                            placeholder="Phone Number">
+                                        <small id="emailHelp" class="form-text text-muted" style="color:red;"><% if(typeof contactError !== 'undefined'){ %>
+                                            <%= contactError %> <% } %></small>
+                                    </div>
+                                </div>
+                                <div class=" form-group">
+                                <label for="user_name" class="col-md-3 control-label">Email</label>
+                                <div class="col-md-9">
+                                    <input required title="Can't change email" type="email" value="<%if(typeof email!=='undefined'){%><%=email%><%}%>" class="form-control" name="email" placeholder="Email" disabled>
+                                    <small id="emailHelp" class="form-text text-muted" style="color:red;"><% if(typeof emailError !== 'undefined'){ %>
+                                    <%= emailError %> <% } %></small>
+                                    </div>
+                                </div>
+                                
+                                <br>
+
+                                <div class=" form-group ">
+                                    <label for=" password" class="col-md-3 control-label">Change Password</label>
+                                    <div class="col-md-9">
+                                        <a href="/reset_password">
+                                            Click if you want to change password
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <!-- Button -->
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="btn-signup" type="submit" class="btn btn-info"><i
+                                                class="icon-hand-right"></i>Submit</button>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12 control">
+                                        <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%">
+                                            <a href="/">
+                                                Terms & Conditions
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+</div>
+
+</body>
+<%- include ../partials/footer %>

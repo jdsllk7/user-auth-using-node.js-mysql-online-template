@@ -1,0 +1,31 @@
+{
+  "name": "villagesavers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": {
+    "name": "Jdslk",
+    "email": "jdslk7@gmail.com",
+    "url": "https://jdslk.netlify.com/index.html"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.5.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.3.0",
+    "moment": "^2.24.0",
+    "mysql": "^2.17.1",
+    "nodemailer": "^6.4.2",
+    "req-flash": "0.0.3",
+    "uuid": "^3.3.3",
+    "xoauth2": "^1.2.0"
+  }
+}

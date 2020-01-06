@@ -1,0 +1,58 @@
+<html lang="en">
+
+<%- include ../partials/header %>
+<!-- Main component for a primary marketing message or call to action -->
+
+<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <div class="panel-title">Password Recovery</div>
+        </div>
+
+        <div style="padding-top:30px" class="panel-body">
+            <% if (typeof error !== 'undefined' && error.length > 0) { %>
+            <ul class="alert alert-danger col-sm-12">
+                <% error.forEach((err)=> { %><li style="margin-left: 3%;"><%= err %><br></li><% }) %>
+            </ul>
+            <% }else if (typeof success !== 'undefined' && success.length > 0) { %>
+            <div class="alert alert-success col-sm-12"><%= success %></div>
+            <% } %>
+
+            <form id="loginform" class="form-horizontal" role="form" method="post" action="/forgot">
+
+                <div class=" form-group">
+                    <label for="user_name" class="col-md-3 control-label">Email</label>
+                    <div class="col-md-9">
+                        <input required type="email" value="<%if(typeof email!=='undefined'){%><%=email%><%}%>" class="form-control" name="email" placeholder="Email">
+                    <small id="emailHelp" class="form-text text-muted" style="color:red;"><% if(typeof emailError !== 'undefined'){ %><%= emailError %> <% } %></small>
+                    </div>
+                </div>
+
+                <div style=" margin-top:10px" class="form-group">
+                        <div class="col-sm-12 controls">
+                            <button id="btn-login" type="submit" class="btn btn-success">Reset Password </button>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <div class="col-md-12 control">
+                            <div style="padding-top:15px; font-size:85%">
+                                <a href="/login">
+                                    Remember my password
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+            </form>
+
+
+
+        </div>
+    </div>
+</div>
+
+</div>
+</body>
+<%- include ../partials/footer %>

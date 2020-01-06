@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Node | MySQL</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+  <!-- browser icons -->
+  <link rel="icon" href="/public/images/favicon.ico">
+  <!-- <link rel="icon" type="image/gif" href="/public/images/logo.jpg"> -->
+  <!-- <link rel="shortcut icon" href="/public/images/logo.jpg"> -->
+
+</head>
+
+<body>
+  <div class="container">
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class=""><a href="/">Home</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if (typeof user !== 'undefined' && user.length > 0) { %>
+            <li><a href="/contact_us">Contact us</a></li>
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/edit_profile"><%= user %></a></li>
+            <% }else{ %>
+            <li><a href="/contact_us">Contact us</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Create Account</a></li>
+            <% } %>
+          </ul>
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+      <!--/.container-fluid -->
+    </nav>
